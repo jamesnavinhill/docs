@@ -13,18 +13,12 @@
     "light": "/images/logo-light.jpg"
   },
   "colors": {
-<<<<<<< HEAD
     "primary": "#9b6288",
     "light": "#c18ead",
     "dark": "#7a4d69"
   },
   "appearance": {
     "default": "dark"
-=======
-    "primary": "#7b4a9b",
-    "light": "#bbb7b7",
-    "dark": "#161515"
->>>>>>> 6d1dc5e8ae5c5243d4b19a9754e6d60787e457c4
   },
   "navbar": {
     "primary": {
@@ -86,35 +80,9 @@
       }
     ]
   },
-<<<<<<< HEAD
   "footer": {
     "socials": {
       "github": "https://github.com/jamesnavinhill/sherlock"
     }
-=======
-  "background": {
-    "decoration": "grid",
-    "color": {
-      "light": "#bbb7b7",
-      "dark": "#161515"
-    }
-  },
-  "appearance": {
-    "default": "system"
-  },
-  "fonts": {
-    "family": "Source Sans Pro"
-  },
-  "styling": {
-    "eyebrows": "section"
-  },
-  "icons": {
-    "library": "lucide"
-  },
-  "logo": {
-    "light": "/images/logo-light.jpg",
-    "dark": "/images/logo-dark.jpg",
-    "href": "https://sherlock-osint.vercel.app/welcome"
->>>>>>> 6d1dc5e8ae5c5243d4b19a9754e6d60787e457c4
   }
 }
