@@ -1,18 +1,19 @@
 {
   "$schema": "https://mintlify.com/docs.json",
-  "theme": "luma",
+  "theme": "linden",
   "name": "Sherlock",
   "favicon": "https://media.brand.dev/267de00b-fae5-4994-9cdc-3989a2ece8a0.png",
   "colors": {
-    "primary": "#6c7472",
-    "light": "#0f0f0f",
-    "dark": "#9f9f9e"
+    "primary": "#7b4a9b",
+    "light": "#bbb7b7",
+    "dark": "#161515"
   },
   "navbar": {
     "primary": {
       "type": "github",
       "href": "https://github.com/jamesnavinhill/sherlock"
-    }
+    },
+    "links": []
   },
   "navigation": {
     "tabs": [
@@ -66,5 +67,29 @@
         ]
       }
     ]
+  },
+  "background": {
+    "decoration": "grid",
+    "color": {
+      "light": "#bbb7b7",
+      "dark": "#161515"
+    }
+  },
+  "appearance": {
+    "default": "system"
+  },
+  "fonts": {
+    "family": "Source Sans Pro"
+  },
+  "styling": {
+    "eyebrows": "section"
+  },
+  "icons": {
+    "library": "lucide"
+  },
+  "logo": {
+    "light": "/images/logo-light.jpg",
+    "dark": "/images/logo-dark.jpg",
+    "href": "https://sherlock-osint.vercel.app/welcome"
   }
 }
