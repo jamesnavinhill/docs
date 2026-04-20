@@ -242,6 +242,20 @@ body::after {
   box-shadow: var(--sherlock-accent-glow);
 }
 
+#headlessui-portal-root #navigation-items {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
+#headlessui-portal-root #navigation-items .sidebar-group-header {
+  padding-left: 0.25rem !important;
+}
+
+#headlessui-portal-root #navigation-items #sidebar-group li a {
+  padding-left: 0.25rem !important;
+  padding-right: 0.25rem !important;
+}
+
 #content-container,
 #body-content {
   color: var(--sherlock-text);

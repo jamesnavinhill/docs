@@ -1,0 +1,239 @@
+- generic [ref=e4]:
+  - generic [ref=e10]:
+    - link "Sherlock home page dark logo" [ref=e12] [cursor=pointer]:
+      - /url: https://sherlock-osint.vercel.app/welcome
+      - generic [ref=e13]: Sherlock home page
+      - img "dark logo" [ref=e14]
+    - generic [ref=e15]:
+      - generic [ref=e16]:
+        - link "Documentation" [ref=e19] [cursor=pointer]:
+          - /url: /introduction
+        - navigation [ref=e20]:
+          - list [ref=e21]:
+            - listitem [ref=e22] [cursor=pointer]:
+              - link "jamesnavinhill/sherlock" [ref=e23]:
+                - /url: https://github.com/jamesnavinhill/sherlock
+                - generic [ref=e25]:
+                  - img [ref=e26]
+                  - generic [ref=e28]: jamesnavinhill/sherlock
+      - generic [ref=e29]:
+        - button "Open search" [ref=e30] [cursor=pointer]:
+          - generic [ref=e31]: Search...
+          - img [ref=e32]
+        - button "Toggle dark mode" [ref=e33] [cursor=pointer]:
+          - img [ref=e34]
+  - generic [ref=e36]:
+    - generic [ref=e40]:
+      - generic [ref=e41]:
+        - heading "Get Started" [level=5] [ref=e43]
+        - list [ref=e44]:
+          - listitem [ref=e45]:
+            - 'link "Sherlock: AI-powered research and investigation tool" [ref=e46] [cursor=pointer]':
+              - /url: /introduction
+              - img [ref=e48]
+              - generic [ref=e52]: "Sherlock: AI-powered research and investigation tool"
+          - listitem [ref=e53]:
+            - 'link "Sherlock quickstart: from setup to first investigation" [ref=e54] [cursor=pointer]':
+              - /url: /quickstart
+              - generic [ref=e57]: "Sherlock quickstart: from setup to first investigation"
+          - listitem [ref=e58]:
+            - link "Connect an AI provider to Sherlock with an API key" [ref=e59] [cursor=pointer]:
+              - /url: /provider-setup
+              - generic [ref=e62]: Connect an AI provider to Sherlock with an API key
+      - generic [ref=e63]:
+        - heading "Core Concepts" [level=5] [ref=e65]
+        - list [ref=e66]:
+          - listitem [ref=e67]:
+            - 'link "Workspaces: organize and manage your research projects" [ref=e68] [cursor=pointer]':
+              - /url: /concepts/workspaces
+              - generic [ref=e71]: "Workspaces: organize and manage your research projects"
+          - listitem [ref=e72]:
+            - 'link "Artifacts: structured AI investigation reports in Sherlock" [ref=e73] [cursor=pointer]':
+              - /url: /concepts/artifacts
+              - generic [ref=e76]: "Artifacts: structured AI investigation reports in Sherlock"
+          - listitem [ref=e77]:
+            - link "Investigation scopes and domain packs for Sherlock runs" [ref=e78] [cursor=pointer]:
+              - /url: /concepts/scopes-and-domains
+              - generic [ref=e81]: Investigation scopes and domain packs for Sherlock runs
+          - listitem [ref=e82]:
+            - link "How Sherlock stores your data and protects privacy" [ref=e83] [cursor=pointer]:
+              - /url: /concepts/data-and-privacy
+              - generic [ref=e86]: How Sherlock stores your data and protects privacy
+      - generic [ref=e87]:
+        - heading "Features" [level=5] [ref=e89]
+        - list [ref=e90]:
+          - listitem [ref=e91]:
+            - link "Running AI-powered investigations and analysis in Sherlock" [ref=e92] [cursor=pointer]:
+              - /url: /features/running-investigations
+              - generic [ref=e95]: Running AI-powered investigations and analysis in Sherlock
+          - listitem [ref=e96]:
+            - link "Research boards for visual investigation in Sherlock" [ref=e97] [cursor=pointer]:
+              - /url: /features/research-board
+              - generic [ref=e100]: Research boards for visual investigation in Sherlock
+          - listitem [ref=e101]:
+            - 'link "Sherlock chat: AI conversations grounded in your workspace" [ref=e102] [cursor=pointer]':
+              - /url: /features/chat
+              - generic [ref=e105]: "Sherlock chat: AI conversations grounded in your workspace"
+          - listitem [ref=e106]:
+            - 'link "Timeline: chronological research history in Sherlock" [ref=e107] [cursor=pointer]':
+              - /url: /features/timeline
+              - generic [ref=e110]: "Timeline: chronological research history in Sherlock"
+          - listitem [ref=e111]:
+            - 'link "Network graph: visualize entity relationships in Sherlock" [ref=e112] [cursor=pointer]':
+              - /url: /features/network-graph
+              - generic [ref=e115]: "Network graph: visualize entity relationships in Sherlock"
+          - listitem [ref=e116]:
+            - 'link "Live Monitor: scan for signals across your research scope" [ref=e117] [cursor=pointer]':
+              - /url: /features/live-monitor
+              - generic [ref=e120]: "Live Monitor: scan for signals across your research scope"
+          - listitem [ref=e121]:
+            - 'link "Files: browse and manage all your research workspaces" [ref=e122] [cursor=pointer]':
+              - /url: /features/files
+              - generic [ref=e125]: "Files: browse and manage all your research workspaces"
+      - generic [ref=e126]:
+        - heading "Configuration" [level=5] [ref=e128]
+        - list [ref=e129]:
+          - listitem [ref=e130]:
+            - 'link "Sherlock settings: API keys, scopes, and data controls" [ref=e131] [cursor=pointer]':
+              - /url: /configuration/settings
+              - generic [ref=e134]: "Sherlock settings: API keys, scopes, and data controls"
+          - listitem [ref=e135]:
+            - link "Customize the Sherlock visual theme and appearance" [ref=e136] [cursor=pointer]:
+              - /url: /configuration/themes
+              - generic [ref=e139]: Customize the Sherlock visual theme and appearance
+          - listitem [ref=e140]:
+            - link "Back up, export, and import your Sherlock workspace data" [ref=e141] [cursor=pointer]:
+              - /url: /configuration/export-import
+              - generic [ref=e144]: Back up, export, and import your Sherlock workspace data
+      - generic [ref=e145]:
+        - heading "Deployment" [level=5] [ref=e147]
+        - list [ref=e148]:
+          - listitem [ref=e149]:
+            - 'link "Deploy Sherlock to Vercel: step-by-step setup guide" [ref=e150] [cursor=pointer]':
+              - /url: /deployment/vercel
+              - generic [ref=e153]: "Deploy Sherlock to Vercel: step-by-step setup guide"
+          - listitem [ref=e154]:
+            - 'link "BYOK: using your own AI provider key with Sherlock" [ref=e155] [cursor=pointer]':
+              - /url: /deployment/byok
+              - generic [ref=e158]: "BYOK: using your own AI provider key with Sherlock"
+    - generic [ref=e161]:
+      - banner [ref=e162]:
+        - generic [ref=e163]:
+          - generic [ref=e164]: Get Started
+          - 'heading "Sherlock: AI-powered research and investigation tool" [level=1] [ref=e166]'
+        - paragraph [ref=e168]: Sherlock is a browser-based AI workspace for investigations, research boards, chat, and monitoring — all data stays local in your browser.
+      - generic [ref=e169]:
+        - generic [ref=e170]: Sherlock is an AI-powered research and investigation workspace that runs entirely in your browser. You bring your own API key from a supported AI provider, point it at a topic, and Sherlock helps you run structured analysis, build visual research boards, chat with an AI grounded in your findings, track activity over time, and monitor for new signals — with every byte of your data staying in your browser, not on Sherlock’s servers.
+        - heading "Navigate to header How Sherlock works" [level=2] [ref=e171]:
+          - link "Navigate to header" [ref=e172] [cursor=pointer]:
+            - /url: "#how-sherlock-works"
+            - img [ref=e174]
+          - generic [ref=e176] [cursor=pointer]: How Sherlock works
+        - generic [ref=e177]:
+          - text: Sherlock organizes your research into
+          - strong [ref=e178]: workspaces
+          - text: . Each workspace holds the artifacts (investigation reports), chat sessions, board canvases, signals, and source records that belong to a single research project or topic. You can have as many workspaces as you need, and each one persists locally in your browser — no account or server required.
+        - generic [ref=e179]: When you launch a run, Sherlock sends your prompt and workspace context directly to the AI provider you’ve configured — Gemini, OpenRouter, OpenAI, or Anthropic. The response comes back as a structured artifact that you can read, annotate, cite, and build on. Nothing passes through Sherlock’s own servers.
+        - heading "Navigate to header Key capabilities" [level=2] [ref=e180]:
+          - link "Navigate to header" [ref=e181] [cursor=pointer]:
+            - /url: "#key-capabilities"
+            - img [ref=e183]
+          - generic [ref=e185] [cursor=pointer]: Key capabilities
+        - generic [ref=e186]:
+          - link "Investigation runs Launch structured AI analysis with domain-specific scopes, purpose profiles, starter prompts, and model selection." [ref=e187] [cursor=pointer]:
+            - generic [ref=e188]:
+              - img [ref=e190]
+              - generic [ref=e191]:
+                - heading "Investigation runs" [level=2] [ref=e192]
+                - generic [ref=e194]: Launch structured AI analysis with domain-specific scopes, purpose profiles, starter prompts, and model selection.
+          - link "Research board Build visual canvas investigations with tldraw — place artifacts, entities, signals, notes, and links on a shared canvas." [ref=e195] [cursor=pointer]:
+            - generic [ref=e196]:
+              - img [ref=e198]
+              - generic [ref=e199]:
+                - heading "Research board" [level=2] [ref=e200]
+                - generic [ref=e202]: Build visual canvas investigations with tldraw — place artifacts, entities, signals, notes, and links on a shared canvas.
+          - link "Chat Chat with an AI grounded in your active workspace, with @mention references to artifacts and streaming responses." [ref=e203] [cursor=pointer]:
+            - generic [ref=e204]:
+              - img [ref=e206]
+              - generic [ref=e207]:
+                - heading "Chat" [level=2] [ref=e208]
+                - generic [ref=e210]: Chat with an AI grounded in your active workspace, with @mention references to artifacts and streaming responses.
+          - link "Timeline Explore a chronological view of your workspace activity — runs, artifacts, signals, and chat sessions — with saved views and snapshot export." [ref=e211] [cursor=pointer]:
+            - generic [ref=e212]:
+              - img [ref=e214]
+              - generic [ref=e215]:
+                - heading "Timeline" [level=2] [ref=e216]
+                - generic [ref=e218]: Explore a chronological view of your workspace activity — runs, artifacts, signals, and chat sessions — with saved views and snapshot export.
+          - link "Network graph Visualize entity relationships with a D3-powered graph, including manual nodes, link weights, and entity resolution." [ref=e219] [cursor=pointer]:
+            - generic [ref=e220]:
+              - img [ref=e222]
+              - generic [ref=e223]:
+                - heading "Network graph" [level=2] [ref=e224]
+                - generic [ref=e226]: Visualize entity relationships with a D3-powered graph, including manual nodes, link weights, and entity resolution.
+          - link "Live monitor Scan for live signals across your domain scope and feed them directly into new investigation runs." [ref=e227] [cursor=pointer]:
+            - generic [ref=e228]:
+              - img [ref=e230]
+              - generic [ref=e231]:
+                - heading "Live monitor" [level=2] [ref=e232]
+                - generic [ref=e234]: Scan for live signals across your domain scope and feed them directly into new investigation runs.
+          - link "Files Browse all your workspaces and artifacts in one place, with grid and list views, filtering, and direct export actions." [ref=e235] [cursor=pointer]:
+            - generic [ref=e236]:
+              - img [ref=e238]
+              - generic [ref=e239]:
+                - heading "Files" [level=2] [ref=e240]
+                - generic [ref=e242]: Browse all your workspaces and artifacts in one place, with grid and list views, filtering, and direct export actions.
+        - heading "Navigate to header Bring your own key (BYOK)" [level=2] [ref=e243]:
+          - link "Navigate to header" [ref=e244] [cursor=pointer]:
+            - /url: "#bring-your-own-key-byok"
+            - img [ref=e246]
+          - generic [ref=e248] [cursor=pointer]: Bring your own key (BYOK)
+        - generic [ref=e249]: "Sherlock does not provide AI access on your behalf. To run investigations or use the chat feature, you need at least one API key from a supported provider:"
+        - list [ref=e250]:
+          - listitem [ref=e251]:
+            - strong [ref=e252]: Google Gemini
+            - text: — available from Google AI Studio
+          - listitem [ref=e253]:
+            - strong [ref=e254]: OpenRouter
+            - text: — a single key that routes to hundreds of models, including free tiers
+          - listitem [ref=e255]:
+            - strong [ref=e256]: OpenAI
+            - text: — GPT-4 and other OpenAI models
+          - listitem [ref=e257]:
+            - strong [ref=e258]: Anthropic
+            - text: — Claude models
+        - generic [ref=e259]:
+          - text: You add your key once in
+          - strong [ref=e260]: Settings → Runtime
+          - text: ", and it stays in your browser. Sherlock never transmits your key to its own servers. For shared or public deployments, every user adds their own key — there are no server-side credentials to manage."
+        - generic [ref=e261]:
+          - img "Note" [ref=e263]
+          - generic [ref=e266]: You can browse existing workspaces and artifacts without an API key. A key is only required when you want to run new AI analysis or start a chat session.
+        - heading "Navigate to header Your data stays local" [level=2] [ref=e267]:
+          - link "Navigate to header" [ref=e268] [cursor=pointer]:
+            - /url: "#your-data-stays-local"
+            - img [ref=e270]
+          - generic [ref=e272] [cursor=pointer]: Your data stays local
+        - generic [ref=e273]: "Sherlock stores all workspace data — artifacts, chat history, research boards, signals, and run records — in a browser-local SQLite database backed by IndexedDB. This means:"
+        - list [ref=e274]:
+          - listitem [ref=e275]: No account or login required
+          - listitem [ref=e276]: No data leaves your browser unless you explicitly export it
+          - listitem [ref=e277]: Clearing your browser storage removes your local data, so export backups when it matters
+        - generic [ref=e278]:
+          - text: You can export individual artifacts as HTML, Markdown, or JSON, and export full workspace backups from
+          - strong [ref=e279]: Settings → Data
+          - text: to move your research between devices or share it with others.
+      - 'link "Sherlock quickstart: from setup to first investigation" [ref=e281] [cursor=pointer]':
+        - /url: /quickstart
+        - generic [ref=e282]:
+          - generic [ref=e283]: "Sherlock quickstart: from setup to first investigation"
+          - img [ref=e284]
+      - contentinfo [ref=e286]:
+        - link "github" [ref=e288] [cursor=pointer]:
+          - /url: https://github.com/jamesnavinhill/sherlock
+          - generic [ref=e289]: github
+          - img [ref=e290]
+        - link "Powered by This documentation is built and hosted on Mintlify, a developer documentation platform" [ref=e293] [cursor=pointer]:
+          - /url: https://www.mintlify.com?utm_campaign=poweredBy&utm_medium=referral&utm_source=undefined
+          - generic [ref=e294]: Powered by
+          - img [ref=e295]
+          - generic [ref=e304]: This documentation is built and hosted on Mintlify, a developer documentation platform
