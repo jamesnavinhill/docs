@@ -19,7 +19,6 @@
   --sherlock-radius: 6px;
   --sherlock-radius-sm: 6px;
   --sherlock-pill-radius: 999px;
-  --sherlock-sidebar-width: 16rem;
   --sherlock-grid-size: 20px;
   --sherlock-grid-dot: rgba(244, 241, 245, 0.18);
   --sherlock-control-bg: rgba(255, 255, 255, 0.03);
@@ -71,37 +70,6 @@ html:not(.dark) {
     transparent 42%
   );
   --sherlock-page-sheen: linear-gradient(180deg, rgba(255, 255, 255, 0.55), transparent 22%);
-}
-
-html:not(.dark) .code-group [role='tabpanel'] {
-  background: #ffffff !important;
-  background-color: #ffffff !important;
-}
-
-html:not(.dark) .code-group [data-component-part='code-block-root'],
-html:not(.dark) .code-group pre,
-html:not(.dark) .code-group pre.shiki {
-  background: transparent !important;
-  background-color: transparent !important;
-  box-shadow: none !important;
-  border: 0 !important;
-}
-
-.code-group [data-component-part='code-block-root'] {
-  overflow-x: auto !important;
-  overflow-y: auto !important;
-  scrollbar-width: thin;
-}
-
-.code-group pre,
-.code-group pre.shiki {
-  overflow: visible !important;
-  width: max-content !important;
-  min-width: 100% !important;
-}
-
-.code-group [data-component-part='code-group-tab-content'] {
-  min-width: max-content !important;
 }
 
 html,
@@ -648,20 +616,6 @@ body::after {
   color: var(--sherlock-text-muted);
 }
 
-@media (min-width: 1024px) {
-  #sidebar-content {
-    width: var(--sherlock-sidebar-width) !important;
-  }
-
-  #body-content {
-    padding-left: var(--sherlock-sidebar-width) !important;
-  }
-
-  #content-area {
-    margin-left: max(0px, calc(50vw - 348px - var(--sherlock-sidebar-width))) !important;
-  }
-}
-
 @media (max-width: 900px) {
   .sherlock-grid-2,
   .sherlock-grid-3 {
@@ -682,6 +636,19 @@ html:not(.dark) .code-group > .flex.flex-1.overflow-hidden,
 html:not(.dark) .code-group [role='tabpanel'] {
   background: #ffffff !important;
   background-color: #ffffff !important;
+}
+
+.code-group [data-component-part='code-block-root'] {
+  overflow-x: auto !important;
+  overflow-y: hidden !important;
+  scrollbar-width: thin;
+}
+
+.code-group pre,
+.code-group pre.shiki {
+  overflow: visible !important;
+  width: 100% !important;
+  min-width: 100% !important;
 }
 
 html:not(.dark) .code-group [data-component-part='code-block-root'],
