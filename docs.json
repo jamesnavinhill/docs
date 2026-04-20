@@ -2,11 +2,23 @@
   "$schema": "https://mintlify.com/docs.json",
   "theme": "luma",
   "name": "Sherlock",
-  "favicon": "https://media.brand.dev/267de00b-fae5-4994-9cdc-3989a2ece8a0.png",
+  "description": "Sherlock documentation for local-first AI investigations, workspace chat, boards, timeline analysis, and deployment.",
+  "logo": {
+    "dark": "/images/logo-dark.jpg",
+    "light": "/images/logo-light.jpg",
+    "href": "/"
+  },
+  "favicon": {
+    "dark": "/images/logo-dark.jpg",
+    "light": "/images/logo-light.jpg"
+  },
   "colors": {
-    "primary": "#6c7472",
-    "light": "#0f0f0f",
-    "dark": "#9f9f9e"
+    "primary": "#9b6288",
+    "light": "#c18ead",
+    "dark": "#7a4d69"
+  },
+  "appearance": {
+    "default": "dark"
   },
   "navbar": {
     "primary": {
@@ -66,5 +78,10 @@
         ]
       }
     ]
+  },
+  "footer": {
+    "socials": {
+      "github": "https://github.com/jamesnavinhill/sherlock"
+    }
   }
 }

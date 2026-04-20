@@ -1,55 +1,47 @@
-# Mintlify Starter Kit
+# Sherlock docs
 
-Use the starter kit to get your docs deployed and ready to customize.
+This repository is the source of truth for Sherlock's Mintlify documentation site. It holds the docs content, navigation, theme overrides, and Mintlify workflows that publish the public docs site.
 
-Click the green **Use this template** button at the top of this repo to copy the Mintlify starter kit. The starter kit contains examples with
+## What lives here
 
-- Guide pages
-- Navigation
-- Customizations
-- API reference pages
-- Use of popular components
+- `docs.json`: site navigation, branding, colors, and Mintlify config
+- `style.css`: Sherlock-specific visual overrides for the Mintlify theme
+- `*.mdx`: documentation pages
+- `.mintlify/workflows/`: automation that turns Sherlock app changes into docs drafts or PRs
 
-**[Follow the full quickstart guide](https://starter.mintlify.com/quickstart)**
+## Mintlify skills
 
-## AI-assisted writing
-
-Set up your AI coding tool to work with Mintlify:
+Install Mintlify's authoring skills from the root of this docs repo:
 
 ```bash
 npx skills add https://mintlify.com/docs
 ```
 
-This command installs Mintlify's documentation skill for your configured AI tools like Claude Code, Cursor, Windsurf, and others. The skill includes component reference, writing standards, and workflow guidance.
+That install is best treated as project-local tooling for the docs repo. The `skills` CLI creates local agent assets such as `.agents/skills/` and `skills-lock.json`; those are generated artifacts, not the source of truth for the docs site, so they are ignored in git here.
 
-See the [AI tools guides](/ai-tools) for tool-specific setup.
+If you want the Mintlify skills available outside this repo too, install them globally instead of relying on the project-local copy.
 
-## Development
+## Local preview
 
-Install the [Mintlify CLI](https://www.npmjs.com/package/mint) to preview your documentation changes locally. To install, use the following command:
+Install the Mintlify CLI if you do not already have it:
 
-```
+```bash
 npm i -g mint
 ```
 
-Run the following command at the root of your documentation, where your `docs.json` is located:
+Run the preview server from the folder that contains `docs.json`:
 
-```
+```bash
 mint dev
 ```
 
-View your local preview at `http://localhost:3000`.
+The local site will usually be available at `http://localhost:3000`.
 
-## Publishing changes
+## Publishing
 
-Install our GitHub app from your [dashboard](https://dashboard.mintlify.com/settings/organization/github-app) to propagate changes from your repo to your deployment. Changes are deployed to production automatically after pushing to the default branch.
+Mintlify deploys this site automatically from the connected GitHub repository and default branch. The separate Sherlock app repo does not directly deploy these docs unless a Mintlify workflow opens a docs change in this repo.
 
-## Need help?
+## References
 
-### Troubleshooting
-
-- If your dev environment isn't running: Run `mint update` to ensure you have the most recent version of the CLI.
-- If a page loads as a 404: Make sure you are running in a folder with a valid `docs.json`.
-
-### Resources
 - [Mintlify documentation](https://mintlify.com/docs)
+- [Sherlock Mintlify operations notes](../sherlock/docs/operations/MINTLIFY_DOCS.md)
