@@ -203,6 +203,8 @@ body::after {
 
 #navigation-items {
   scrollbar-color: rgba(255, 255, 255, 0.18) transparent;
+  padding-left: 0.875rem !important;
+  padding-right: 0.75rem !important;
 }
 
 #navigation-items .sidebar-group-header {
@@ -210,6 +212,7 @@ body::after {
   font-family: 'IBM Plex Mono', monospace;
   font-size: 0.72rem !important;
   letter-spacing: 0.12em;
+  padding-left: 0.5rem !important;
   text-transform: uppercase;
 }
 
@@ -217,6 +220,8 @@ body::after {
   border: 1px solid transparent;
   border-radius: var(--sherlock-radius-sm);
   color: var(--sherlock-text-muted) !important;
+  padding-left: 0.625rem !important;
+  padding-right: 0.625rem !important;
   transition:
     color 180ms ease,
     border-color 180ms ease,
