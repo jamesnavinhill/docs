@@ -87,6 +87,23 @@ html:not(.dark) .code-group pre.shiki {
   border: 0 !important;
 }
 
+.code-group [data-component-part='code-block-root'] {
+  overflow-x: auto !important;
+  overflow-y: auto !important;
+  scrollbar-width: thin;
+}
+
+.code-group pre,
+.code-group pre.shiki {
+  overflow: visible !important;
+  width: max-content !important;
+  min-width: 100% !important;
+}
+
+.code-group [data-component-part='code-group-tab-content'] {
+  min-width: max-content !important;
+}
+
 html,
 body {
   background: var(--sherlock-bg);
@@ -301,6 +318,19 @@ body::after {
   border: 1px solid var(--sherlock-border);
   border-radius: var(--sherlock-radius-sm);
   background: var(--sherlock-inline-bg);
+}
+
+#content-container pre code,
+#body-content pre code,
+.code-group pre code,
+.code-group code[class*='language-'],
+.code-group [data-component-part='code-group-tab-content'] code {
+  border: 0 !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  background-color: transparent !important;
+  padding: 0 !important;
+  box-shadow: none !important;
 }
 
 #content-container table,
@@ -646,4 +676,17 @@ body::after {
   .sherlock-section {
     padding: 1.2rem;
   }
+}
+
+html:not(.dark) .code-group > .flex.flex-1.overflow-hidden,
+html:not(.dark) .code-group [role='tabpanel'] {
+  background: #ffffff !important;
+  background-color: #ffffff !important;
+}
+
+html:not(.dark) .code-group [data-component-part='code-block-root'],
+html:not(.dark) .code-group pre.shiki,
+html:not(.dark) .code-group pre {
+  background: transparent !important;
+  background-color: transparent !important;
 }
