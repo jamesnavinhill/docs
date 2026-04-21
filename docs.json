@@ -81,6 +81,12 @@
               "deployment/vercel",
               "deployment/byok"
             ]
+          },
+          {
+            "group": "Changelog",
+            "pages": [
+              "changelog/2026-04-21"
+            ]
           }
         ]
       }
