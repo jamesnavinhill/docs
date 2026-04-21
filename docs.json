@@ -5,7 +5,7 @@
   "description": "Sherlock documentation for local-first AI investigations, workspace chat, boards, timeline analysis, and deployment.",
   "logo": {
     "dark": "/images/logo-dark.jpg",
-    "light": "/images/logo-light.jpg",
+    "light": "/images/logo-dark.jpg",
     "href": "/"
   },
   "favicon": {
@@ -30,7 +30,12 @@
   "navigation": {
     "tabs": [
       {
-        "tab": "Documentation",
+        "tab": "Sherlock",
+        "href": "https://sherlock-osint.vercel.app/welcome"
+      },
+      {
+        "tab": "Docs",
+        "icon": "book-open",
         "groups": [
           {
             "group": "Get Started",

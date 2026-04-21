@@ -153,6 +153,13 @@ body::after {
   color: var(--sherlock-heading);
 }
 
+#navbar img.nav-logo {
+  height: 2.25rem !important;
+  width: auto !important;
+  transform: scale(2.15);
+  transform-origin: left center;
+}
+
 #navbar .nav-logo {
   color: var(--sherlock-heading) !important;
   font-family: 'Work Sans', sans-serif;
@@ -181,6 +188,71 @@ body::after {
 #navbar nav a,
 #navbar .topbar-right-container a {
   padding-inline: 0.85rem !important;
+}
+
+#navbar nav a[href='/'],
+#navbar .nav-tabs a[href='/'] {
+  width: 2.25rem;
+  padding-inline: 0 !important;
+  font-size: 0 !important;
+  justify-content: center;
+}
+
+#navbar nav a[href='/'] svg,
+#navbar .nav-tabs a[href='/'] svg {
+  width: 1rem !important;
+  height: 1rem !important;
+  margin: 0 !important;
+}
+
+#navbar nav a[href='/'] > div,
+#navbar .nav-tabs a[href='/'] > div {
+  display: none !important;
+}
+
+#navbar nav a[href='https://sherlock-osint.vercel.app/welcome'],
+#navbar .nav-tabs a[href='https://sherlock-osint.vercel.app/welcome'] {
+  align-self: center;
+  height: 2.25rem !important;
+  min-height: 2.25rem !important;
+  padding-inline: 0.95rem !important;
+  border: 1px solid var(--sherlock-accent-border);
+  border-radius: var(--sherlock-radius-sm);
+  background: var(--sherlock-accent-soft) !important;
+  color: var(--sherlock-accent) !important;
+  box-shadow: var(--sherlock-accent-glow);
+}
+
+#navbar .nav-tabs {
+  align-items: center;
+}
+
+#navbar nav a[href='https://sherlock-osint.vercel.app/welcome']:hover,
+#navbar .nav-tabs a[href='https://sherlock-osint.vercel.app/welcome']:hover {
+  background: var(--sherlock-accent-soft-strong) !important;
+  border-color: color-mix(in srgb, var(--sherlock-accent) 68%, transparent);
+}
+
+#navbar nav a[href='https://sherlock-osint.vercel.app/welcome'] > div,
+#navbar .nav-tabs a[href='https://sherlock-osint.vercel.app/welcome'] > div {
+  display: none !important;
+}
+
+#navbar .topbar-right-container a[href='https://github.com/jamesnavinhill/sherlock'],
+#navbar nav a[href='https://github.com/jamesnavinhill/sherlock'] {
+  width: 2.25rem;
+  justify-content: center;
+  padding-inline: 0 !important;
+}
+
+#navbar .topbar-right-container a[href='https://github.com/jamesnavinhill/sherlock'] svg,
+#navbar nav a[href='https://github.com/jamesnavinhill/sherlock'] svg {
+  margin: 0 !important;
+}
+
+#navbar .topbar-right-container a[href='https://github.com/jamesnavinhill/sherlock'] span:not(.sr-only),
+#navbar nav a[href='https://github.com/jamesnavinhill/sherlock'] span:not(.sr-only) {
+  display: none !important;
 }
 
 #search-bar-entry {
