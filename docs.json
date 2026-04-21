@@ -6,7 +6,7 @@
   "logo": {
     "dark": "/images/logo-dark.jpg",
     "light": "/images/logo-light.jpg",
-    "href": "https://sherlock-osint.vercel.app/welcome"
+    "href": "/docs"
   },
   "favicon": {
     "dark": "/images/logo-dark.jpg",
@@ -35,6 +35,7 @@
           {
             "group": "Get Started",
             "pages": [
+              "index",
               "introduction",
               "quickstart",
               "provider-setup"
@@ -80,16 +81,6 @@
       }
     ]
   },
-  "redirects": [
-    {
-      "source": "/",
-      "destination": "/docs/introduction"
-    },
-    {
-      "source": "/docs",
-      "destination": "/docs/introduction"
-    }
-  ],
   "footer": {
     "socials": {
       "github": "https://github.com/jamesnavinhill/sherlock"
