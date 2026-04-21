@@ -59,7 +59,7 @@ Sherlock builds to a standard static `dist/` directory. The repo includes a `ver
 </CodeGroup>
 
 <Warning>
-  Do not set `VITE_GEMINI_API_KEY`, `VITE_OPENROUTER_API_KEY`, `VITE_OPENAI_API_KEY`, or `VITE_ANTHROPIC_API_KEY` in Vercel for a public-facing deployment. Because these are `VITE_` prefixed variables, they are baked into the client bundle at build time and visible to every visitor. Every request made through the site would be charged to your provider account. For public hosting, use strict BYOK mode — see [BYOK: bring your own key to Sherlock](/docs/deployment/byok).
+  Do not set `VITE_GEMINI_API_KEY`, `VITE_OPENROUTER_API_KEY`, `VITE_OPENAI_API_KEY`, or `VITE_ANTHROPIC_API_KEY` in Vercel for a public-facing deployment. Because these are `VITE_` prefixed variables, they are baked into the client bundle at build time and visible to every visitor. Every request made through the site would be charged to your provider account. For public hosting, use strict BYOK mode — see [BYOK: bring your own key to Sherlock](/deployment/byok).
 </Warning>
 
 ## Important notes

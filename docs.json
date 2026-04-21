@@ -6,7 +6,7 @@
   "logo": {
     "dark": "/images/logo-dark.jpg",
     "light": "/images/logo-light.jpg",
-    "href": "/docs"
+    "href": "/"
   },
   "favicon": {
     "dark": "/images/logo-dark.jpg",
