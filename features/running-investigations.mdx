@@ -81,7 +81,7 @@ The Run Setup modal walks you through six steps. You can navigate back to any co
 
     Choose an **agent persona** tailored for your scope. Personas inject role-specific instruction into the prompt, shaping the tone and analytical frame of the output.
 
-    Adjust **generation mode** and other behavior controls for this run. See [Generation modes](#generation-modes) below.
+    Adjust **generation mode**, **search depth**, and **thinking budget** for this run. See [Generation modes](#generation-modes), [Search depth](#search-depth), and [Thinking budget](#thinking-budget) below for details on each.
 
     Optionally check **Save as template** and enter a name to save this full configuration for reuse.
   </Accordion>
@@ -99,6 +99,32 @@ Sherlock supports two generation modes. You can set a global default in **Settin
     Sherlock breaks the investigation into multiple steps, sending each step to the AI in sequence and building up the artifact progressively. This mode is suited to complex investigations where each phase of analysis informs the next.
   </Tab>
 </Tabs>
+
+## Search depth
+
+Search depth controls how broadly and rigorously the AI investigates your topic. Choose between two levels in step 6 of the run setup or in **Settings → Runtime**:
+
+<Tabs>
+  <Tab title="Standard">
+    The default level. Sherlock sends a focused prompt that balances breadth and speed. Suitable for most investigations where you have a clear topic and scope.
+  </Tab>
+  <Tab title="Deep">
+    Sherlock increases the breadth of synthesis, investigative rigor, and evidence gathering. Use this for complex topics where you want the AI to explore more angles, cross-reference more sources, and produce more detailed evidence records. Deep runs take longer and consume more tokens.
+  </Tab>
+</Tabs>
+
+## Thinking budget
+
+Some AI models support **extended reasoning** — an internal thinking step where the model plans its analysis before generating output. When you select a model that supports this capability, a **Thinking Budget** slider appears in step 6 of the run setup.
+
+- The slider ranges from **0** to **8,192** tokens in increments of 512.
+- A higher budget gives the model more room to reason before writing, which can improve the quality and coherence of complex investigations.
+- Set the budget to **0** to disable extended reasoning for that run.
+- If the selected model does not support thinking budgets, the control is disabled automatically.
+
+<Tip>
+  Thinking budget is most useful for longer, multi-faceted investigations where you want the AI to plan its structure and cross-reference findings before committing to output. For quick, focused runs, the default value is usually sufficient.
+</Tip>
 
 ## OpenRouter and web search
 

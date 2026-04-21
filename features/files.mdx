@@ -72,6 +72,31 @@ From the **Items** tab, each item shows its type (note, link, file, or promoted 
 - **Board** — place the item on the research board
 - **Source link** — open the item's associated URL (for link and file items)
 
+## Uploading documents
+
+You can upload files from your device into any workspace. Sherlock reads the content of text-based files and saves them either as workspace items or as artifact drafts, depending on which route you choose.
+
+**Supported file types for text extraction:**
+
+- `.txt`, `.md`, `.markdown`, `.csv`, `.json`, `.xml`, `.yaml`, `.yml`, `.html`
+- Any file with a `text/*` MIME type
+
+Image and video files can also be uploaded — they are stored with a preview thumbnail but without text extraction.
+
+**How to upload:**
+
+1. Open the upload dialog from **Files**, the **Research Board**, or **Chat** using the upload action in the toolbar or context menu.
+2. Select one or more files from your device.
+3. Choose a **destination route**:
+   - **Save as item** — creates a workspace item (note-type record) with the file's extracted text content and metadata. The item appears in the Library rail and can be placed on boards or referenced in chat.
+   - **Create artifact draft** — creates a new artifact with the file's content as its body. You choose an artifact type (Report, Synthesis, Brief, Digest, Comparison, Note, Timeline, or Monitor Snapshot) before saving.
+4. Select the **target workspace** if you have multiple workspaces.
+5. Confirm to save. Sherlock extracts readable text from supported formats and attaches file metadata (name, type, size) automatically.
+
+<Note>
+  Uploaded files are processed entirely in your browser. No file data is sent to any external server — the extracted text and metadata are saved to your local database alongside your other workspace data.
+</Note>
+
 ## Grid and list modes
 
 Use the view toggle in the toolbar to switch between:

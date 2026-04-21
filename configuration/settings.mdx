@@ -29,6 +29,8 @@ Settings is organized into five tabs: **Runtime**, **Scopes**, **Templates**, **
     - **Active provider** — which provider Sherlock routes to when you start an analysis or chat
     - **Active model** — the specific model within that provider; you can browse the full OpenRouter catalog or enter an OpenRouter model slug manually
     - **Generation mode** — **Single pass** generates the full artifact in one request; **Staged** generates in structured phases and is recommended for longer, more detailed reports
+    - **Search depth** — **Standard** for focused investigations; **Deep** for broader synthesis and more rigorous evidence gathering
+    - **Thinking budget** — a slider (0–8,192 tokens) that controls how much reasoning budget the AI uses before generating output; only active when the selected model supports extended reasoning
 
     Individual runs can override these defaults at launch time, so the Runtime settings represent your starting point rather than a hard constraint.
 
