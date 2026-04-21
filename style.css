@@ -1,76 +1,89 @@
 @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Work+Sans:wght@400;500;600;700&display=swap');
 
 :root {
-  --sherlock-bg: #0b0b0d;
-  --sherlock-panel: #131317;
-  --sherlock-surface: #191920;
-  --sherlock-surface-strong: #20202a;
-  --sherlock-border: rgba(255, 255, 255, 0.08);
-  --sherlock-border-strong: rgba(255, 255, 255, 0.14);
-  --sherlock-text: #d7d3db;
-  --sherlock-text-muted: #a6a1ac;
-  --sherlock-text-quiet: #85808c;
-  --sherlock-heading: #f4f1f5;
-  --sherlock-accent: #9b6288;
-  --sherlock-accent-soft: rgba(155, 98, 136, 0.12);
-  --sherlock-accent-soft-strong: rgba(155, 98, 136, 0.18);
-  --sherlock-accent-border: rgba(155, 98, 136, 0.36);
-  --sherlock-accent-glow: 0 0 24px -18px rgba(155, 98, 136, 0.65);
+  --sherlock-shell: oklch(0 0 0);
+  --sherlock-bg: oklch(0 0 0);
+  --sherlock-rail: oklch(0 0 0);
+  --sherlock-panel: oklch(0.141 0.004 286);
+  --sherlock-surface: oklch(0.21 0.006 286);
+  --sherlock-border-base: #27272a;
+  --sherlock-text: #a1a1aa;
+  --sherlock-ink: #f4f4f5;
+  --sherlock-text-muted: color-mix(in oklab, var(--sherlock-text) 84%, var(--sherlock-ink) 16%);
+  --sherlock-text-quiet: color-mix(in oklab, var(--sherlock-text) 70%, var(--sherlock-bg));
+  --sherlock-text-strong: color-mix(in oklab, var(--sherlock-ink) 44%, var(--sherlock-text));
+  --sherlock-heading: color-mix(in oklab, var(--sherlock-ink) 56%, var(--sherlock-text));
+  --sherlock-accent: oklch(0.57 0.09 340);
+  --sherlock-accent-soft: color-mix(in oklab, var(--sherlock-accent) 12%, transparent);
+  --sherlock-accent-soft-strong: color-mix(in oklab, var(--sherlock-accent) 18%, transparent);
+  --sherlock-accent-border: color-mix(in oklab, var(--sherlock-accent) 48%, transparent);
+  --sherlock-accent-glow: 0 0 12px -10px color-mix(in oklab, var(--sherlock-accent) 26%, transparent);
   --sherlock-radius: 6px;
   --sherlock-radius-sm: 6px;
   --sherlock-pill-radius: 999px;
   --sherlock-grid-size: 20px;
-  --sherlock-grid-dot: rgba(244, 241, 245, 0.18);
-  --sherlock-control-bg: rgba(255, 255, 255, 0.03);
-  --sherlock-control-bg-hover: rgba(255, 255, 255, 0.06);
-  --sherlock-inline-bg: rgba(255, 255, 255, 0.04);
-  --sherlock-navbar-bg: color-mix(in srgb, var(--sherlock-bg) 84%, transparent);
+  --sherlock-grid-dot: color-mix(in oklab, var(--sherlock-ink) 26%, var(--sherlock-border-base));
+  --sherlock-grid-opacity: 0.2;
   --sherlock-sidebar-width: 20rem;
-  --sherlock-sidebar-bg:
-    linear-gradient(180deg, rgba(255, 255, 255, 0.02), rgba(255, 255, 255, 0)),
-    color-mix(in srgb, var(--sherlock-bg) 92%, transparent);
-  --sherlock-footer-bg: color-mix(in srgb, var(--sherlock-bg) 88%, transparent);
-  --sherlock-elevated-bg: rgba(19, 19, 23, 0.84);
-  --sherlock-page-glow: radial-gradient(
-    circle at top center,
-    rgba(155, 98, 136, 0.16) 0%,
-    transparent 44%
+  --sherlock-border: color-mix(in oklab, var(--sherlock-surface) 54%, var(--sherlock-border-base) 46%);
+  --sherlock-border-strong: color-mix(
+    in oklab,
+    var(--sherlock-surface) 72%,
+    var(--sherlock-border-base) 28%
   );
-  --sherlock-page-sheen: linear-gradient(180deg, rgba(255, 255, 255, 0.015), transparent 24%);
+  --sherlock-divider: var(--sherlock-border);
+  --sherlock-navbar-bg: color-mix(in oklab, var(--sherlock-shell) 92%, var(--sherlock-panel) 8%);
+  --sherlock-sidebar-bg: color-mix(in oklab, var(--sherlock-rail) 95%, transparent);
+  --sherlock-panel-bg: color-mix(in oklab, var(--sherlock-panel) 95%, var(--sherlock-bg) 5%);
+  --sherlock-control-bg: color-mix(in oklab, var(--sherlock-panel) 18%, transparent);
+  --sherlock-control-bg-hover: color-mix(in oklab, var(--sherlock-surface) 64%, var(--sherlock-panel) 36%);
+  --sherlock-input-bg: color-mix(in oklab, var(--sherlock-panel) 92%, var(--sherlock-bg));
+  --sherlock-input-bg-hover: color-mix(in oklab, var(--sherlock-panel) 88%, var(--sherlock-bg));
+  --sherlock-input-border: color-mix(in oklab, var(--sherlock-border-base) 92%, transparent);
+  --sherlock-input-border-strong: color-mix(in oklab, var(--sherlock-border-base) 100%, transparent);
+  --sherlock-scrollbar-track: color-mix(in oklab, var(--sherlock-panel) 88%, var(--sherlock-bg));
+  --sherlock-scrollbar-thumb: color-mix(in oklab, var(--sherlock-border) 78%, var(--sherlock-surface));
+  --sherlock-scrollbar-thumb-hover: color-mix(in oklab, var(--sherlock-border-strong) 82%, var(--sherlock-surface));
+  --sherlock-inline-bg: color-mix(in oklab, var(--sherlock-panel) 62%, var(--sherlock-surface) 38%);
+  --sherlock-card-bg: color-mix(in oklab, var(--sherlock-panel) 74%, var(--sherlock-surface) 26%);
+  --sherlock-card-bg-subtle: color-mix(in oklab, var(--sherlock-panel) 68%, var(--sherlock-bg) 32%);
+  --sherlock-footer-bg: color-mix(in oklab, var(--sherlock-shell) 92%, var(--sherlock-panel) 8%);
+  --sherlock-elevated-bg: color-mix(in oklab, var(--sherlock-panel) 96%, var(--sherlock-bg) 4%);
+  --sherlock-shadow: 0 14px 26px -24px rgba(0, 0, 0, 0.62);
 }
 
 html:not(.dark) {
   color-scheme: light;
-  --sherlock-bg: #eef0e8;
-  --sherlock-panel: #f6f7f1;
-  --sherlock-surface: #ffffff;
-  --sherlock-surface-strong: #e7eadf;
-  --sherlock-border: rgba(28, 24, 32, 0.1);
-  --sherlock-border-strong: rgba(28, 24, 32, 0.18);
-  --sherlock-text: #302b35;
-  --sherlock-text-muted: #5d5664;
-  --sherlock-text-quiet: #7a7381;
-  --sherlock-heading: #17141b;
-  --sherlock-accent-soft: rgba(155, 98, 136, 0.1);
-  --sherlock-accent-soft-strong: rgba(155, 98, 136, 0.15);
-  --sherlock-accent-border: rgba(155, 98, 136, 0.24);
-  --sherlock-accent-glow: 0 0 20px -16px rgba(155, 98, 136, 0.42);
-  --sherlock-grid-dot: rgba(48, 43, 53, 0.12);
-  --sherlock-control-bg: rgba(23, 20, 27, 0.03);
-  --sherlock-control-bg-hover: rgba(23, 20, 27, 0.06);
-  --sherlock-inline-bg: rgba(23, 20, 27, 0.04);
-  --sherlock-navbar-bg: color-mix(in srgb, var(--sherlock-surface) 88%, transparent);
-  --sherlock-sidebar-bg:
-    linear-gradient(180deg, rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.24)),
-    color-mix(in srgb, var(--sherlock-panel) 94%, transparent);
-  --sherlock-footer-bg: color-mix(in srgb, var(--sherlock-surface) 90%, transparent);
-  --sherlock-elevated-bg: rgba(246, 247, 241, 0.92);
-  --sherlock-page-glow: radial-gradient(
-    circle at top center,
-    rgba(155, 98, 136, 0.14) 0%,
-    transparent 42%
-  );
-  --sherlock-page-sheen: linear-gradient(180deg, rgba(255, 255, 255, 0.55), transparent 22%);
+  --sherlock-shell: oklch(0.88 0.002 85);
+  --sherlock-bg: oklch(0.88 0.002 85);
+  --sherlock-rail: oklch(0.88 0.002 85);
+  --sherlock-panel: oklch(0.9 0.004 85);
+  --sherlock-surface: oklch(0.975 0.004 81);
+  --sherlock-border-base: #c6ccd6;
+  --sherlock-text: #424954;
+  --sherlock-ink: #171b22;
+  --sherlock-text-muted: color-mix(in oklab, var(--sherlock-ink) 74%, var(--sherlock-text));
+  --sherlock-text-quiet: color-mix(in oklab, var(--sherlock-ink) 62%, var(--sherlock-text));
+  --sherlock-text-strong: color-mix(in oklab, var(--sherlock-ink) 74%, var(--sherlock-text));
+  --sherlock-heading: var(--sherlock-ink);
+  --sherlock-navbar-bg: color-mix(in oklab, var(--sherlock-shell) 92%, white 8%);
+  --sherlock-sidebar-bg: color-mix(in oklab, var(--sherlock-rail) 95%, transparent);
+  --sherlock-panel-bg: color-mix(in oklab, var(--sherlock-panel) 88%, white 12%);
+  --sherlock-control-bg: color-mix(in oklab, var(--sherlock-panel) 72%, transparent);
+  --sherlock-control-bg-hover: color-mix(in oklab, var(--sherlock-panel) 74%, var(--sherlock-surface) 26%);
+  --sherlock-input-bg: color-mix(in oklab, var(--sherlock-panel) 84%, var(--sherlock-surface) 16%);
+  --sherlock-input-bg-hover: color-mix(in oklab, var(--sherlock-panel) 70%, var(--sherlock-surface) 30%);
+  --sherlock-input-border: color-mix(in oklab, var(--sherlock-border-base) 68%, white 32%);
+  --sherlock-input-border-strong: color-mix(in oklab, var(--sherlock-border-base) 80%, var(--sherlock-ink) 20%);
+  --sherlock-scrollbar-track: color-mix(in oklab, var(--sherlock-panel) 88%, var(--sherlock-surface) 12%);
+  --sherlock-scrollbar-thumb: color-mix(in oklab, var(--sherlock-border-base) 64%, var(--sherlock-surface));
+  --sherlock-scrollbar-thumb-hover: color-mix(in oklab, var(--sherlock-border-base) 78%, var(--sherlock-ink) 22%);
+  --sherlock-inline-bg: color-mix(in oklab, var(--sherlock-surface) 74%, var(--sherlock-panel) 26%);
+  --sherlock-card-bg: color-mix(in oklab, var(--sherlock-panel) 74%, var(--sherlock-surface) 26%);
+  --sherlock-card-bg-subtle: color-mix(in oklab, var(--sherlock-panel) 68%, var(--sherlock-bg) 32%);
+  --sherlock-footer-bg: color-mix(in oklab, var(--sherlock-shell) 92%, white 8%);
+  --sherlock-elevated-bg: color-mix(in oklab, var(--sherlock-panel) 86%, var(--sherlock-surface) 14%);
+  --sherlock-shadow: 0 10px 22px -20px rgba(28, 36, 48, 0.12);
 }
 
 html,
@@ -98,13 +111,20 @@ body::after {
 }
 
 body::before {
-  opacity: 0.18;
+  opacity: var(--sherlock-grid-opacity);
   background-image: radial-gradient(var(--sherlock-grid-dot) 1px, transparent 1px);
   background-size: var(--sherlock-grid-size) var(--sherlock-grid-size);
 }
 
 body::after {
-  background: var(--sherlock-page-glow), var(--sherlock-page-sheen);
+  display: none;
+}
+
+body,
+#sidebar,
+#sidebar-content,
+#navbar {
+  box-shadow: none !important;
 }
 
 #navbar,
@@ -121,6 +141,12 @@ body::after {
   z-index: 1;
 }
 
+@media (min-width: 1024px) {
+  #body-content {
+    padding-left: var(--sherlock-sidebar-width) !important;
+  }
+}
+
 #background-color {
   background: transparent !important;
 }
@@ -135,6 +161,12 @@ body::after {
   background: var(--sherlock-navbar-bg);
   backdrop-filter: blur(18px) saturate(1.2);
   border-bottom: 1px solid var(--sherlock-border);
+  overflow: visible !important;
+}
+
+#navbar > div[class*='absolute'] {
+  background: transparent !important;
+  border-color: var(--sherlock-divider) !important;
 }
 
 #navbar > div {
@@ -154,10 +186,12 @@ body::after {
 }
 
 #navbar img.nav-logo {
-  height: 2.25rem !important;
+  height: 2rem !important;
   width: auto !important;
-  transform: scale(2.15);
-  transform-origin: left center;
+  max-width: 2.75rem !important;
+  object-fit: contain;
+  transform: none !important;
+  transform-origin: center;
 }
 
 #navbar .nav-logo {
@@ -174,39 +208,46 @@ body::after {
 #navbar .topbar-right-container button,
 #search-bar-entry,
 #search-bar-entry-mobile {
-  border-radius: var(--sherlock-radius-sm);
+  border-radius: var(--sherlock-radius-sm) !important;
 }
 
-#search-bar-entry,
-#navbar .topbar-right-container button,
-#navbar .topbar-right-container a {
-  border: 1px solid var(--sherlock-border);
+#navbar nav a:not([href='https://sherlock-osint.vercel.app/welcome']),
+#navbar .topbar-right-container a,
+#navbar .topbar-right-container button {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 2.25rem !important;
+  min-width: 2.25rem !important;
+  height: 2.25rem !important;
+  min-height: 2.25rem !important;
+  padding: 0 !important;
+  border: 1px solid var(--sherlock-border) !important;
   background: var(--sherlock-control-bg) !important;
+  color: var(--sherlock-text-muted) !important;
   box-shadow: none !important;
-}
-
-#navbar nav a,
-#navbar .topbar-right-container a {
-  padding-inline: 0.85rem !important;
-}
-
-#navbar nav a[href='/'],
-#navbar .nav-tabs a[href='/'] {
-  width: 2.25rem;
-  padding-inline: 0 !important;
   font-size: 0 !important;
-  justify-content: center;
 }
 
-#navbar nav a[href='/'] svg,
-#navbar .nav-tabs a[href='/'] svg {
+#navbar nav a:not([href='https://sherlock-osint.vercel.app/welcome']):hover,
+#navbar .topbar-right-container a:hover,
+#navbar .topbar-right-container button:hover {
+  border-color: var(--sherlock-border-strong) !important;
+  background: var(--sherlock-control-bg-hover) !important;
+  color: var(--sherlock-heading) !important;
+}
+
+#navbar nav a:not([href='https://sherlock-osint.vercel.app/welcome']) svg,
+#navbar .topbar-right-container a svg,
+#navbar .topbar-right-container button svg {
   width: 1rem !important;
   height: 1rem !important;
   margin: 0 !important;
+  color: currentColor !important;
 }
 
-#navbar nav a[href='/'] > div,
-#navbar .nav-tabs a[href='/'] > div {
+#navbar nav a:not([href='https://sherlock-osint.vercel.app/welcome']) > div,
+#navbar .topbar-right-container a span:not(.sr-only) {
   display: none !important;
 }
 
@@ -230,7 +271,7 @@ body::after {
 #navbar nav a[href='https://sherlock-osint.vercel.app/welcome']:hover,
 #navbar .nav-tabs a[href='https://sherlock-osint.vercel.app/welcome']:hover {
   background: var(--sherlock-accent-soft-strong) !important;
-  border-color: color-mix(in srgb, var(--sherlock-accent) 68%, transparent);
+  border-color: color-mix(in oklab, var(--sherlock-accent) 68%, transparent);
 }
 
 #navbar nav a[href='https://sherlock-osint.vercel.app/welcome'] > div,
@@ -238,59 +279,181 @@ body::after {
   display: none !important;
 }
 
-#navbar .topbar-right-container a[href='https://github.com/jamesnavinhill/sherlock'],
-#navbar nav a[href='https://github.com/jamesnavinhill/sherlock'] {
-  width: 2.25rem;
-  justify-content: center;
-  padding-inline: 0 !important;
-}
-
-#navbar .topbar-right-container a[href='https://github.com/jamesnavinhill/sherlock'] svg,
-#navbar nav a[href='https://github.com/jamesnavinhill/sherlock'] svg {
-  margin: 0 !important;
-}
-
-#navbar .topbar-right-container a[href='https://github.com/jamesnavinhill/sherlock'] span:not(.sr-only),
-#navbar nav a[href='https://github.com/jamesnavinhill/sherlock'] span:not(.sr-only) {
+#navbar .topbar-right-container a[href*='github.com/jamesnavinhill/sherlock'] [class*='star' i],
+#navbar nav a[href*='github.com/jamesnavinhill/sherlock'] [class*='star' i],
+#navbar .topbar-right-container a[href*='github.com/jamesnavinhill/sherlock'] [aria-label*='star' i],
+#navbar nav a[href*='github.com/jamesnavinhill/sherlock'] [aria-label*='star' i],
+#navbar .topbar-right-container a[href*='github.com/jamesnavinhill/sherlock'] [title*='star' i],
+#navbar nav a[href*='github.com/jamesnavinhill/sherlock'] [title*='star' i],
+#navbar .topbar-right-container a[href*='github.com/jamesnavinhill/sherlock'] [style*='star'],
+#navbar nav a[href*='github.com/jamesnavinhill/sherlock'] [style*='star'],
+#navbar .topbar-right-container a[href*='github.com/jamesnavinhill/sherlock'] svg:not(:first-of-type),
+#navbar nav a[href*='github.com/jamesnavinhill/sherlock'] svg:not(:first-of-type),
+#navbar a:has(svg.lucide-star),
+#navbar button:has(svg.lucide-star),
+#navbar a[href*='github.com'][href*='stargazers'],
+#navbar a[aria-label*='star' i],
+#navbar button[aria-label*='star' i],
+#navbar a[title*='star' i],
+#navbar button[title*='star' i] {
   display: none !important;
 }
 
-#search-bar-entry {
-  width: auto !important;
-  min-width: 13.5rem;
+#navbar #search-bar-entry {
+  display: flex !important;
+  align-items: center !important;
   justify-content: space-between !important;
-  padding-left: 0.875rem !important;
-  padding-right: 0.75rem !important;
+  gap: 0.5rem !important;
+  width: clamp(18rem, 32vw, 30rem) !important;
+  min-width: 18rem !important;
+  max-width: 30rem !important;
+  height: 2.25rem !important;
+  min-height: 2.25rem !important;
+  padding: 0 0.625rem 0 0.75rem !important;
+  border: 1px solid var(--sherlock-input-border) !important;
+  border-radius: var(--sherlock-radius-sm) !important;
+  background: var(--sherlock-input-bg) !important;
+  color: var(--sherlock-text-strong) !important;
+  box-shadow: inset 0 0 0 1px color-mix(in oklab, var(--sherlock-surface) 18%, transparent) !important;
+  font-family: 'Work Sans', sans-serif;
+  font-size: 0.75rem !important;
 }
 
-#navbar .topbar-right-container button,
-#navbar .topbar-right-container a {
-  min-height: 2.25rem;
+#navbar #search-bar-entry:hover,
+#navbar #search-bar-entry:focus-visible {
+  background: var(--sherlock-input-bg-hover) !important;
+  border-color: var(--sherlock-input-border-strong) !important;
+  color: var(--sherlock-heading) !important;
+  box-shadow: var(--sherlock-shadow) !important;
+  outline: none !important;
 }
 
-#search-bar-entry:hover,
-#navbar .topbar-right-container button:hover,
-#navbar .topbar-right-container a:hover {
-  border-color: var(--sherlock-border-strong);
-  background: var(--sherlock-control-bg-hover) !important;
+#navbar #search-bar-entry svg {
+  flex: 0 0 auto;
+  width: 0.875rem !important;
+  height: 0.875rem !important;
+  color: var(--sherlock-text-quiet) !important;
+}
+
+#navbar #search-bar-entry > div {
+  display: flex !important;
+  flex: 1 1 auto !important;
+  align-items: center !important;
+  min-width: 0;
+}
+
+#navbar #search-bar-entry > div > div {
+  display: block !important;
+  flex: 1 1 auto !important;
+  min-width: 0;
+  color: var(--sherlock-text-muted) !important;
+  text-align: left;
+}
+
+#navbar #search-bar-entry span:not(.sr-only) {
+  display: inline-flex !important;
+  align-items: center;
+  border: 1px solid var(--sherlock-border) !important;
+  border-radius: 4px !important;
+  background: var(--sherlock-control-bg) !important;
+  color: var(--sherlock-text-quiet) !important;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.625rem !important;
+  font-weight: 540 !important;
+  line-height: 1 !important;
+  padding: 0.22rem 0.36rem !important;
+}
+
+@media (min-width: 1024px) {
+  #navbar [class*='lg:flex'][class*='h-12'] {
+    display: grid !important;
+    grid-template-columns: var(--sherlock-sidebar-width) minmax(0, 1fr) var(--sherlock-sidebar-width);
+    align-items: center;
+    height: 3rem !important;
+    padding-inline: 0.875rem 1.25rem !important;
+  }
+
+  #navbar [class*='lg:flex'][class*='h-12'] > div:first-child {
+    width: var(--sherlock-sidebar-width) !important;
+    min-width: 0;
+    flex: none !important;
+    justify-content: flex-start !important;
+    padding-left: 0.5rem !important;
+    padding-right: 0 !important;
+  }
+
+  #navbar nav {
+    justify-self: center;
+  }
+
+  #navbar .topbar-right-container {
+    justify-self: end;
+    width: auto !important;
+    min-width: 0;
+    flex: none !important;
+    gap: 0.5rem !important;
+  }
+
+  #navbar .topbar-right-container > div:has(#search-bar-entry) {
+    position: fixed !important;
+    top: calc(var(--banner-height, 0px) + 0.375rem) !important;
+    left: 50% !important;
+    z-index: 60;
+    display: flex !important;
+    width: clamp(18rem, 32vw, 30rem) !important;
+    transform: translateX(-50%) !important;
+  }
+
+  #navbar .topbar-right-container > div:has(#search-bar-entry) #search-bar-entry {
+    width: 100% !important;
+  }
+}
+
+@media (max-width: 1023px) {
+  #navbar #search-bar-entry {
+    width: 2.25rem !important;
+    min-width: 2.25rem !important;
+    padding: 0 !important;
+    justify-content: center !important;
+  }
+
+  #navbar #search-bar-entry div,
+  #navbar #search-bar-entry span:not(.sr-only) {
+    display: none !important;
+  }
 }
 
 #content-area {
-  background: transparent;
+  background: transparent !important;
 }
 
-#sidebar {
+#sidebar,
+#sidebar-content {
   left: 0 !important;
   right: auto !important;
   margin-left: 0 !important;
   width: var(--sherlock-sidebar-width) !important;
+  box-sizing: border-box;
   border-right: 1px solid var(--sherlock-border);
   background: var(--sherlock-sidebar-bg);
   backdrop-filter: blur(18px) saturate(1.1);
 }
 
-#sidebar-content {
-  box-sizing: border-box;
+#sidebar::before,
+#sidebar::after,
+#sidebar-content::before,
+#sidebar-content::after,
+#navigation-items::before,
+#navigation-items::after {
+  display: none !important;
+  content: none !important;
+}
+
+#sidebar [class*='bg-gradient'],
+#sidebar-content [class*='bg-gradient'],
+#navigation-items [class*='bg-gradient'] {
+  background-image: none !important;
+  box-shadow: none !important;
 }
 
 #sidebar > #sidebar-content {
@@ -299,10 +462,68 @@ body::after {
   padding-right: 1rem !important;
 }
 
+#sidebar-content,
+#sidebar-content *,
+#navigation-items,
+#sidebar-content .stable-scrollbar-gutter {
+  scrollbar-color: var(--sherlock-scrollbar-thumb) transparent !important;
+  scrollbar-gutter: stable !important;
+  scrollbar-width: thin !important;
+}
+
 #navigation-items {
-  scrollbar-color: rgba(255, 255, 255, 0.18) transparent;
   padding-left: 0.875rem !important;
   padding-right: 0.75rem !important;
+}
+
+#sidebar-content::-webkit-scrollbar,
+#sidebar-content *::-webkit-scrollbar,
+#navigation-items::-webkit-scrollbar,
+#sidebar-content .stable-scrollbar-gutter::-webkit-scrollbar {
+  width: 0.5rem !important;
+  height: 0.5rem !important;
+  background: transparent !important;
+}
+
+#sidebar-content::-webkit-scrollbar-button,
+#sidebar-content *::-webkit-scrollbar-button,
+#navigation-items::-webkit-scrollbar-button,
+#sidebar-content .stable-scrollbar-gutter::-webkit-scrollbar-button {
+  display: none !important;
+  width: 0 !important;
+  height: 0 !important;
+  background: transparent !important;
+}
+
+#sidebar-content::-webkit-scrollbar-track,
+#sidebar-content::-webkit-scrollbar-track-piece,
+#sidebar-content *::-webkit-scrollbar-track,
+#sidebar-content *::-webkit-scrollbar-track-piece,
+#navigation-items::-webkit-scrollbar-track,
+#navigation-items::-webkit-scrollbar-track-piece,
+#sidebar-content .stable-scrollbar-gutter::-webkit-scrollbar-track,
+#sidebar-content .stable-scrollbar-gutter::-webkit-scrollbar-track-piece {
+  background: transparent !important;
+  border: 0 !important;
+}
+
+#sidebar-content::-webkit-scrollbar-thumb,
+#sidebar-content *::-webkit-scrollbar-thumb,
+#navigation-items::-webkit-scrollbar-thumb,
+#sidebar-content .stable-scrollbar-gutter::-webkit-scrollbar-thumb {
+  min-height: 3rem;
+  border: 2px solid transparent !important;
+  border-radius: var(--sherlock-pill-radius) !important;
+  background: var(--sherlock-scrollbar-thumb) !important;
+  background-clip: content-box !important;
+}
+
+#sidebar-content::-webkit-scrollbar-thumb:hover,
+#sidebar-content *::-webkit-scrollbar-thumb:hover,
+#navigation-items::-webkit-scrollbar-thumb:hover,
+#sidebar-content .stable-scrollbar-gutter::-webkit-scrollbar-thumb:hover {
+  background: var(--sherlock-scrollbar-thumb-hover) !important;
+  background-clip: content-box !important;
 }
 
 #navigation-items .sidebar-group-header {
@@ -329,7 +550,7 @@ body::after {
 
 #navigation-items #sidebar-group li a:hover {
   color: var(--sherlock-heading) !important;
-  background: rgba(255, 255, 255, 0.03);
+  background: var(--sherlock-control-bg);
   border-color: var(--sherlock-border);
 }
 
@@ -356,6 +577,7 @@ body::after {
 
 #content-container,
 #body-content {
+  background: transparent !important;
   color: var(--sherlock-text);
 }
 
@@ -432,14 +654,118 @@ body::after {
   overflow: hidden;
 }
 
+#content-container a[href][class*='border'][class*='rounded'],
+#body-content a[href][class*='border'][class*='rounded'],
+#content-container .card,
+#body-content .card,
+#content-container .callout,
+#body-content .callout,
+#content-container .code-group,
+#body-content .code-group,
+#content-container [role='tabpanel'],
+#body-content [role='tabpanel'] {
+  border-color: var(--sherlock-border) !important;
+  background: var(--sherlock-card-bg) !important;
+  color: var(--sherlock-heading) !important;
+  text-decoration: none !important;
+  box-shadow: inset 0 0 0 1px color-mix(in oklab, var(--sherlock-surface) 18%, transparent) !important;
+}
+
+#content-container a[href][class*='border'][class*='rounded']:hover,
+#body-content a[href][class*='border'][class*='rounded']:hover,
+#content-container .card:hover,
+#body-content .card:hover {
+  border-color: var(--sherlock-border-strong) !important;
+  background: var(--sherlock-control-bg-hover) !important;
+  box-shadow:
+    inset 0 0 0 1px color-mix(in oklab, var(--sherlock-surface) 28%, transparent),
+    var(--sherlock-shadow) !important;
+}
+
+#content-container a[href][class*='border'][class*='rounded'] p,
+#body-content a[href][class*='border'][class*='rounded'] p,
+#content-container .card [data-component-part='card-content'],
+#body-content .card [data-component-part='card-content'],
+#content-container .card [data-as='p'],
+#body-content .card [data-as='p'] {
+  color: var(--sherlock-text-muted) !important;
+}
+
+#content-container .card,
+#body-content .card {
+  border-radius: var(--sherlock-radius-sm) !important;
+}
+
+#content-container .callout,
+#body-content .callout {
+  border-radius: var(--sherlock-radius-sm) !important;
+  color: var(--sherlock-text-strong) !important;
+}
+
+#content-container .callout [data-component-part='callout-content'],
+#body-content .callout [data-component-part='callout-content'],
+#content-container .callout [data-as='p'],
+#body-content .callout [data-as='p'] {
+  color: var(--sherlock-text-strong) !important;
+}
+
+#content-container .callout [data-component-part='callout-icon'] svg,
+#body-content .callout [data-component-part='callout-icon'] svg {
+  color: var(--sherlock-accent) !important;
+}
+
+#content-container .card [data-component-part='card-title'],
+#body-content .card [data-component-part='card-title'] {
+  color: var(--sherlock-heading) !important;
+}
+
+#content-container a[href][class*='border'][class*='rounded'] svg,
+#body-content a[href][class*='border'][class*='rounded'] svg,
+#content-container .card [data-component-part='card-icon'] svg,
+#body-content .card [data-component-part='card-icon'] svg {
+  color: var(--sherlock-accent) !important;
+  background-color: var(--sherlock-accent) !important;
+}
+
+#content-container hr,
+#body-content hr,
+#content-container thead,
+#body-content thead,
+#content-container tbody tr,
+#body-content tbody tr {
+  border-color: var(--sherlock-divider) !important;
+}
+
+#content-container aside,
+#body-content aside,
+#content-container nav[aria-label*='page' i],
+#body-content nav[aria-label*='page' i] {
+  border-color: var(--sherlock-divider) !important;
+  color: var(--sherlock-text-quiet) !important;
+}
+
+#content-container aside a,
+#body-content aside a,
+#content-container nav[aria-label*='page' i] a,
+#body-content nav[aria-label*='page' i] a {
+  color: var(--sherlock-text-quiet) !important;
+}
+
+#content-container aside a:hover,
+#body-content aside a:hover,
+#content-container nav[aria-label*='page' i] a:hover,
+#body-content nav[aria-label*='page' i] a:hover {
+  color: var(--sherlock-heading) !important;
+}
+
 #content-container a,
 #body-content a {
-  color: color-mix(in srgb, var(--sherlock-accent) 82%, white 18%);
+  color: color-mix(in oklab, var(--sherlock-accent) 82%, var(--sherlock-ink) 18%);
 }
 
 #content-container a:hover,
 #body-content a:hover {
-  color: color-mix(in srgb, var(--sherlock-accent) 68%, white 32%);
+  color: color-mix(in oklab, var(--sherlock-accent) 68%, var(--sherlock-ink) 32%);
 }
 
 #content-container button,
@@ -496,8 +822,8 @@ body::after {
 
 html:not(.dark) .code-group > .flex.flex-1.overflow-hidden,
 html:not(.dark) .code-group [role='tabpanel'] {
-  background: #ffffff !important;
-  background-color: #ffffff !important;
+  background: var(--sherlock-surface) !important;
+  background-color: var(--sherlock-surface) !important;
 }
 
 .code-group [data-component-part='code-block-root'] {
@@ -518,4 +844,257 @@ html:not(.dark) .code-group pre.shiki,
 html:not(.dark) .code-group pre {
   background: transparent !important;
   background-color: transparent !important;
+}
+
+/* Header final pass: keep Mintlify behavior, force Sherlock layout. */
+#navbar img.nav-logo {
+  position: absolute !important;
+  top: 50% !important;
+  left: 42% !important;
+  width: 6.2rem !important;
+  height: 6.2rem !important;
+  max-width: none !important;
+  object-fit: contain !important;
+  object-position: center !important;
+  transform: translate(-50%, -50%) !important;
+}
+
+#navbar a:has(img.nav-logo) {
+  position: fixed !important;
+  top: calc(var(--banner-height, 0px) + 2rem) !important;
+  left: 1.75rem !important;
+  z-index: 2 !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 2.75rem !important;
+  height: 2.75rem !important;
+  overflow: hidden !important;
+  transform: translateY(-50%) !important;
+}
+
+@media (min-width: 1024px) {
+  #navbar [class*='lg:flex'][class*='h-12'] {
+    display: grid !important;
+    grid-template-columns: var(--sherlock-sidebar-width) minmax(0, 1fr) var(--sherlock-sidebar-width);
+    padding-left: 1rem !important;
+    padding-right: 1.25rem !important;
+  }
+
+  #navbar [class*='lg:flex'][class*='h-12'] > div:first-child {
+    width: var(--sherlock-sidebar-width) !important;
+    padding-left: 0 !important;
+  }
+
+  #navbar a:has(img.nav-logo) {
+    margin-left: 0 !important;
+  }
+}
+
+#navbar nav a[href='/introduction'],
+#navbar nav a[href='/introduction']:hover {
+  display: inline-flex !important;
+  width: auto !important;
+  min-width: 0 !important;
+  height: 2.25rem !important;
+  padding-inline: 0.65rem !important;
+  gap: 0.4rem !important;
+  border-color: transparent !important;
+  background: transparent !important;
+  color: var(--sherlock-heading) !important;
+  font-size: 0.875rem !important;
+}
+
+#navbar nav a[href='/introduction'] > div,
+#navbar nav a[href='/introduction'] span {
+  display: inline-flex !important;
+}
+
+#navbar .topbar-right-container > ul a,
+#navbar .topbar-right-container button:not([aria-label='Open search']),
+#navbar button[data-component-name='theme-toggle'] {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 2.25rem !important;
+  min-width: 2.25rem !important;
+  height: 2.25rem !important;
+  min-height: 2.25rem !important;
+  padding: 0 !important;
+  border: 1px solid transparent !important;
+  border-radius: var(--sherlock-radius-sm) !important;
+  background: transparent !important;
+  color: var(--sherlock-text-muted) !important;
+  box-shadow: none !important;
+}
+
+#navbar .topbar-right-container > ul a:hover,
+#navbar .topbar-right-container button:not([aria-label='Open search']):hover,
+#navbar button[data-component-name='theme-toggle']:hover {
+  border-color: var(--sherlock-border) !important;
+  background: var(--sherlock-control-bg) !important;
+  color: var(--sherlock-heading) !important;
+}
+
+#navbar a[href*='github.com/jamesnavinhill/sherlock'],
+#navbar a[title='jamesnavinhill/sherlock'] {
+  color: var(--sherlock-text-muted) !important;
+  font-size: 0 !important;
+}
+
+#navbar a[href*='github.com/jamesnavinhill/sherlock'] div,
+#navbar a[title='jamesnavinhill/sherlock'] div {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 0 !important;
+}
+
+#navbar a[href*='github.com/jamesnavinhill/sherlock'] svg,
+#navbar a[title='jamesnavinhill/sherlock'] svg {
+  display: block !important;
+  width: 1rem !important;
+  height: 1rem !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  color: currentColor !important;
+  fill: currentColor !important;
+}
+
+#navbar a[href*='github.com/jamesnavinhill/sherlock'] span:not(.sr-only),
+#navbar a[title='jamesnavinhill/sherlock'] span:not(.sr-only),
+#navbar a[href*='github.com/jamesnavinhill/sherlock'] [class*='star' i],
+#navbar a[title='jamesnavinhill/sherlock'] [class*='star' i] {
+  display: none !important;
+}
+
+#navbar button[aria-label='Open search'],
+#navbar #search-bar-entry {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  gap: 0.5rem !important;
+  width: clamp(18rem, 32vw, 30rem) !important;
+  min-width: 18rem !important;
+  max-width: 30rem !important;
+  height: 2.25rem !important;
+  min-height: 2.25rem !important;
+  padding: 0 0.625rem 0 0.75rem !important;
+  border: 1px solid var(--sherlock-input-border) !important;
+  border-radius: var(--sherlock-radius-sm) !important;
+  background: var(--sherlock-input-bg) !important;
+  color: var(--sherlock-text-strong) !important;
+  box-shadow: inset 0 0 0 1px color-mix(in oklab, var(--sherlock-surface) 18%, transparent) !important;
+  font-family: 'Work Sans', sans-serif;
+  font-size: 0.75rem !important;
+}
+
+#navbar button[aria-label='Open search']:hover,
+#navbar button[aria-label='Open search']:focus-visible,
+#navbar #search-bar-entry:hover,
+#navbar #search-bar-entry:focus-visible {
+  border-color: var(--sherlock-input-border-strong) !important;
+  background: var(--sherlock-input-bg-hover) !important;
+  color: var(--sherlock-heading) !important;
+  box-shadow: var(--sherlock-shadow) !important;
+  outline: none !important;
+}
+
+#navbar button[aria-label='Open search'] > div,
+#navbar #search-bar-entry > div {
+  display: flex !important;
+  flex: 1 1 auto !important;
+  align-items: center !important;
+  min-width: 0;
+}
+
+#navbar button[aria-label='Open search'] > div > div,
+#navbar #search-bar-entry > div > div {
+  display: block !important;
+  flex: 1 1 auto !important;
+  min-width: 0;
+  color: var(--sherlock-text-muted) !important;
+  text-align: left;
+}
+
+#navbar button[aria-label='Open search'] span:not(.sr-only),
+#navbar #search-bar-entry span:not(.sr-only) {
+  display: inline-flex !important;
+  align-items: center;
+  border: 1px solid var(--sherlock-border) !important;
+  border-radius: 4px !important;
+  background: var(--sherlock-control-bg) !important;
+  color: var(--sherlock-text-quiet) !important;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.625rem !important;
+  font-weight: 540 !important;
+  line-height: 1 !important;
+  padding: 0.22rem 0.36rem !important;
+}
+
+#navbar button[aria-label='Open search'] svg,
+#navbar #search-bar-entry svg {
+  width: 0.875rem !important;
+  height: 0.875rem !important;
+  color: var(--sherlock-text-quiet) !important;
+}
+
+@media (min-width: 1024px) {
+  #navbar button[aria-label='Open search'],
+  #navbar #search-bar-entry {
+    position: fixed !important;
+    top: calc(var(--banner-height, 0px) + 1rem) !important;
+    left: 50% !important;
+    z-index: 120 !important;
+    width: 30rem !important;
+    min-width: 30rem !important;
+    max-width: 30rem !important;
+    transform: translateX(-50%) !important;
+  }
+
+  #navbar .topbar-right-container > div:has(button[aria-label='Open search']),
+  #navbar .topbar-right-container > div:has(#search-bar-entry) {
+    position: static !important;
+    z-index: 80 !important;
+    display: flex !important;
+    width: 0 !important;
+    min-width: 0 !important;
+    max-width: 0 !important;
+    flex: 0 0 0 !important;
+    transform: none !important;
+  }
+
+  #navbar .topbar-right-container > div:has(button[aria-label='Open search']) > button,
+  #navbar .topbar-right-container > div:has(#search-bar-entry) > button {
+    width: 30rem !important;
+  }
+}
+
+@media (max-width: 1023px) {
+  #navbar button[aria-label='Open search'],
+  #navbar #search-bar-entry {
+    width: 2.25rem !important;
+    min-width: 2.25rem !important;
+    padding: 0 !important;
+    justify-content: center !important;
+  }
+
+  #navbar button[aria-label='Open search'] div,
+  #navbar button[aria-label='Open search'] span:not(.sr-only),
+  #navbar #search-bar-entry div,
+  #navbar #search-bar-entry span:not(.sr-only) {
+    display: none !important;
+  }
+}
+
+#navbar a[href*='github.com/jamesnavinhill/sherlock']::before,
+#navbar a[title='jamesnavinhill/sherlock']::before {
+  content: '' !important;
+  display: block !important;
+  width: 1rem !important;
+  height: 1rem !important;
+  flex: 0 0 1rem !important;
+  background-color: currentColor !important;
+  -webkit-mask: url("data:image/svg+xml,%3Csvg viewBox='0 0 16 16' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.59 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82A7.6 7.6 0 0 1 8 3.86c.68 0 1.36.09 1.98.27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.28.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z'/%3E%3C/svg%3E") center / contain no-repeat !important;
+  mask: url("data:image/svg+xml,%3Csvg viewBox='0 0 16 16' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.59 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82A7.6 7.6 0 0 1 8 3.86c.68 0 1.36.09 1.98.27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.28.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z'/%3E%3C/svg%3E") center / contain no-repeat !important;
 }
