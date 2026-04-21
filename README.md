@@ -23,16 +23,18 @@ If you want the Mintlify skills available outside this repo too, install them gl
 
 ## Local preview
 
-Install the Mintlify CLI if you do not already have it:
+Install the Mintlify CLI globally on Windows if you do not already have it:
 
-```bash
+```powershell
 npm i -g mint
 ```
 
-Run the preview server from the folder that contains `docs.json`:
+Run docs commands from the folder that contains `docs.json`:
 
-```bash
-mint dev
+```powershell
+npm run dev
+npm run check:links
+npm run validate
 ```
 
 The local site will usually be available at `http://localhost:3000`.
