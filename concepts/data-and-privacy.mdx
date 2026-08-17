@@ -110,6 +110,10 @@ Sherlock does not currently support automatic synchronization across devices. Ea
 
 After importing, both devices will have the same data as of the export timestamp. Any changes made on either device after that point will not be reflected on the other.
 
+## Vercel Web Analytics on hosted deployments
+
+Sherlock's default build includes the Vercel Web Analytics component. On deployments hosted at Vercel with analytics turned on in the project dashboard, Vercel receives pageview and route-change events (route path, referrer, approximate country, device type). It does **not** receive workspace names, artifact contents, chat messages, board contents, API keys, or anything else from your local SQLite or localStorage. See [Vercel Web Analytics](/deployment/vercel#vercel-web-analytics) for how to enable, verify, or remove the integration.
+
 <Warning>
   Clearing your browser's site data for the Sherlock origin will permanently delete your local SQLite database and all your workspaces, artifacts, chat history, and research boards. This cannot be undone. Always export a backup from **Settings → Data** before clearing browser storage, switching to a new device, or changing the origin you use for Sherlock.
 </Warning>

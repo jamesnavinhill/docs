@@ -76,6 +76,36 @@ Deploying a new version to the same domain does not clear visitors' browser stor
 
 The tldraw license key is an SDK license for the board canvas feature. It's configured at deploy time in Vercel (or in `.env.local` for local development) rather than entered in Settings → Runtime like provider API keys. You only need it if you're using the research board surface.
 
+## Vercel Web Analytics
+
+Sherlock's app shell includes the `@vercel/analytics` React component at the root of both the landing view and the workspace chrome view. When you deploy to Vercel and turn Web Analytics on for the project, the app sends privacy-friendly pageview and route-change events to Vercel Analytics automatically. No configuration is required inside Sherlock itself.
+
+### When it applies
+
+The analytics component only reports data when the app is served from a Vercel deployment with Web Analytics enabled in the project dashboard. In local development or on non-Vercel hosts, the component is a no-op — it does not send events and does not require an API key.
+
+### Turn it on
+
+<Steps>
+  <Step title="Deploy to Vercel">
+    Deploy the project following the steps above. The `<Analytics />` component is already wired into `src/app/AppShell.tsx`, so no code changes are needed.
+  </Step>
+  <Step title="Enable Web Analytics in the dashboard">
+    In the Vercel project dashboard, open the **Analytics** tab and click **Enable**. Vercel begins recording pageviews on the next request served from your deployment.
+  </Step>
+  <Step title="Verify events are firing">
+    Load your deployed site and open your browser's DevTools **Network** tab. Look for requests to `/_vercel/insights/view` — one fires per route change. If you see them, tracking is live.
+  </Step>
+</Steps>
+
+### What gets tracked
+
+Web Analytics records pageviews and route changes for the Sherlock SPA. It does **not** capture research content, artifact bodies, chat messages, board contents, entered API keys, or any other data from your local SQLite database. Sherlock's local-first data model (see [How Sherlock stores your data and protects privacy](/concepts/data-and-privacy)) is unaffected — analytics only sees which routes visitors navigate to and standard visitor metadata (approximate country, device type, referrer).
+
+### Turn it off
+
+To disable analytics for a self-hosted fork, remove the `<Analytics />` component from `src/app/AppShell.tsx` (both the landing view and the workspace chrome view) and drop `@vercel/analytics` from `package.json`. Deployments that don't enable Web Analytics in the Vercel dashboard also won't record data even with the component present.
+
 ## Alternative static hosts
 
 Because Sherlock outputs a standard `dist/` directory from Vite, it deploys to any static hosting platform that supports SPA routing. You'll need to configure a catch-all rewrite rule (equivalent to the one in `vercel.json`) on whatever platform you use:
